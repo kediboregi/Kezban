@@ -18,6 +18,7 @@ console.log(s); /* see it all functions on console */
 <!-- Sample1 -->
 <h2>Sample1</h2>
 <div id="durum1"></div>
+<div id="durum11"></div>
 <form id="id1">
 	<input type="text" name="text">
 	<button type="submit" id="submitb1">Submit</button>
@@ -26,7 +27,7 @@ console.log(s); /* see it all functions on console */
 debug=true; /*if defined true, some functions return console logs*/
 
 console.log("### Sample 1 ###");
-Ajaxalake("#submitb1","json.json","get","html","id=4&isim=name").addDataFromFormid("#id1").addResponseToDivid("#durum1").ajax();
+Ajaxalake("#submitb1","json.json","get","html","id=4&isim=name").addDataFromFormid("#id1").loading("#durum1","Yükleniyor<hr>",true).addResponseToDivid("#durum11").ajax();
 console.log("### Sample 1 ###");
 </script>
 

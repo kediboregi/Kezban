@@ -12,7 +12,7 @@ author: https://github.com/unequaled86/
 		this.developer = 'Oğuzhan Çankaya';
 		this.githup = 'unequaled86';
 		this.facebook = 'http://www.fb.com/Unequaled86';
-        this.twitter = 'http://www.twitter.com/Unequaled86';
+		this.twitter = 'http://www.twitter.com/Unequaled86';
 		this.listen = "Thank you for using";
 		
 		this.ajaxVar = null;
@@ -25,7 +25,10 @@ author: https://github.com/unequaled86/
 		this.dataType = dataTypef;
 		this.dataf = dataff;
 		this.formdataid = null;
+		this.yukleniyoryok = false;
+		this.yukleniyorbirkere = false;
 
+		if (typeof(debug)==='undefined') debug = false;
 		if (typeof(submitv)!='undefined' || submitv!='') this.submitVar = submitv;
 		if (typeof(methodf)==='undefined') this.method = "GET";
 		if (typeof(dataTypef)==='undefined') this.dataType = "json";
@@ -113,24 +116,31 @@ author: https://github.com/unequaled86/
 		}
 	}
 	
-	ajaxalake.prototype.loading = function(x,y){
+	ajaxalake.prototype.loading = function(x,y,z){
 		this.yukleniyorVar = x;
 		this.yukleniyorContent = y;
+		if (typeof(z)==='undefined') this.yukleniyorbirkere = false; else this.yukleniyorbirkere=z;
+		return this;
 	}
 	ajaxalake.prototype.yukleniyor = function(){
-		if(this.yukleniyorVar != null){
+		if(this.yukleniyorVar != null && !this.yukleniyoryok){
 			$(this.yukleniyorVar).html(this.yukleniyorContent);
+			console.log("yukleniyor +");
 		}
 	}
 	ajaxalake.prototype.yuklenmiyor = function(){
-		if(this.yukleniyorVar != null){
+		if(this.yukleniyorVar != null && !this.yukleniyoryok){
 			if(debug){
-				setTimeout(function(){
+				//setTimeout(function(){
 					$(this.yukleniyorVar).html("");
-				},1000);
+				//},1000);
 			}else{
 				$(this.yukleniyorVar).html("");
 			}
+			if(this.yukleniyorbirkere == true){
+				this.yukleniyoryok = true;
+			}
+			console.log("yukleniyor -");
 		}
 	}
 
