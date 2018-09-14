@@ -1,17 +1,19 @@
+<!-- need rework -->
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8"/>
-	<title>Ajaxalake Sample</title>
+	<title>Kezban Sample</title>
 	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="../src/ajaxalake.js"></script>
+	<script src="../src/kezban.js"></script>
 </head>
 <body>
 
 <h6>hi</h6>
 
 <script>
-var s = Ajaxalake();
+var s = new kezban();
 console.log(s); /* see it all functions on console */
 </script>
 
@@ -25,11 +27,12 @@ console.log(s); /* see it all functions on console */
 </form>
 <script>
 debug=true; /*if defined true, some functions return console logs*/
-
 console.log("### Sample 1 ###");
 Ajaxalake("#submitb1","json.json","get","html","id=4&isim=name").addDataFromFormid("#id1").loading("#durum1","Yükleniyor<hr>",true).addResponseToDivid("#durum11").ajax();
 console.log("### Sample 1 ###");
 </script>
+
+
 
 <!-- Sample2 -->
 <h2>Sample2</h2>
@@ -56,7 +59,7 @@ console.log("### Sample 2 ###");
 <button type="button" id="cancelb3">Cancel</button>
 <script>
 console.log("### Sample 3 ###");
-var ajaxe3 = Ajaxalake("#submitb3","json.json","get","json","id=4&isim=oğuzhan");
+var ajaxe3 = new kezban("#submitb3","json.json","get","json","id=4&isim=oğuzhan");
 ajaxe3.beforeCallback = function(data){
 	console.log(data);
 	$("#durum3").html("Loading...");
@@ -75,7 +78,7 @@ ajaxe3.afterCallback = function(data){
 			$("#durum3").html(data.mesaj).addClass('alertclass green');
 		}
 		if(data.yonlendir.durum == "1"){
-			window.location.href = data.yonlendir.adres; 
+			window.location.href = data.yonlendir.adres;
 		}
 	//}, 1000);
 }
