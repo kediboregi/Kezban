@@ -1,12 +1,16 @@
-var Kezbann = function (url) {
+var Kezbann = function () {
 	//var hostname = window.location.hostname.split(".")
 	this.method = "get"
-	this.apiurl = url | "/"
+	this.apiurl = "/"
 	this.action = null
 	this.data = null
 	this.debug = true;
-	this.success = function(data) {};
-	this.beforeSend = function(data) {};
+	//this.success = function(data) {};
+	//this.beforeSend = function(data) {};
+};
+Kezbann.prototype.setApiurl = function(val) {
+	this.apiurl = val;
+	return this;
 };
 Kezbann.prototype.setMethod = function(val) {
 	this.method = val;
