@@ -4,6 +4,7 @@ var Kezbann = function () {
 	this.apiurl = "/"
 	this.action = null
 	this.data = null
+	this.debug = true;
 	this.success = function(data) {};
 	this.beforeSend = function(data) {};
 };
@@ -36,13 +37,17 @@ Kezbann.prototype.setError = function(func) {
 	return this;
 };
 Kezbann.prototype.beforeSend = function(data) {
-	//console.log(data)
+	if(this.debug)
+		console.log(data)
 };
 Kezbann.prototype.success = function(data, xhr) {
-	//console.log(data)
+	if(this.debug)
+		console.log(data)
+		console.log(xhr)
 };
 Kezbann.prototype.error = function(data) {
-	//console.log(data)
+	if(this.debug)
+		console.log(data)
 };
 Kezbann.prototype.yap = function() {
 	var self = this;
@@ -83,7 +88,6 @@ Kezbann.prototype.yap = function() {
 			self.beforeSend(self.data)
 		}
 		if (xhr.readyState === xhr.DONE) {
-			console.log(xhr)
 			if (xhr.status >= 200 && xhr.status < 300) {
 				if (self.type == "form") {
 					self.success(xhr.responseText, xhr)

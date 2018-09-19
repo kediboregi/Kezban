@@ -14,7 +14,7 @@
 
 <script>
 var s = new kezban();
-console.log(s); /* see it all functions on console */
+//console.log(s); /* all functions on the console */
 </script>
 
 <!-- Sample1 -->
@@ -26,71 +26,9 @@ console.log(s); /* see it all functions on console */
 	<button type="submit" id="submitb1">Submit</button>
 </form>
 <script>
-debug=true; /*if defined true, some functions return console logs*/
+console.log("*** Sample 1 ***");
+new kezban().setAction("C:/Users/Unequaled86/Documents/GitHub/Kezban/sample/json.json").yap();
 console.log("### Sample 1 ###");
-Ajaxalake("#submitb1","json.json","get","html","id=4&isim=name").addDataFromFormid("#id1").loading("#durum1","Yükleniyor<hr>",true).addResponseToDivid("#durum11").ajax();
-console.log("### Sample 1 ###");
-</script>
-
-
-
-<!-- Sample2 -->
-<h2>Sample2</h2>
-<p>if you dont add trigger button, ajax working one time by herself</p>
-<div id="durum2"></div>
-<script>
-console.log("### Sample 2 ###");
-var ajaxe2 = Ajaxalake("","json.json","get","html","id=4&isim=name&");
-ajaxe2.loading("#durum2","Yükleniyor<hr>");
-ajaxe2.beforeCallback = function(data){
-
-}
-ajaxe2.afterCallback = function(data){
-	$("#durum2").html(data).addClass('alertclass red');
-}
-ajaxe2.ajax();
-console.log("### Sample 2 ###");
-</script>
-
-<!-- Sample3 -->
-<h2>Sample3</h2>
-<div id="durum3"></div>
-<button type="submit" id="submitb3">Click</button>
-<button type="button" id="cancelb3">Cancel</button>
-<script>
-console.log("### Sample 3 ###");
-var ajaxe3 = new kezban("#submitb3","json.json","get","json","id=4&isim=oğuzhan");
-ajaxe3.beforeCallback = function(data){
-	console.log(data);
-	$("#durum3").html("Loading...");
-	$("#durum3").attr('class', 'loadingclass');
-}
-ajaxe3.afterCallback = function(data){
-	console.log(data);
-	//setTimeout(function(){ /*You can see loading text now. active on localhost*/
-		if(data.durum == "2"){
-			$("#durum3").html(data.mesaj).addClass('alertclass red');
-		}
-		if(data.durum == "1"){
-			$("#durum3").html(data.mesaj).addClass('alertclass blue');
-		}
-		if(data.durum == "0"){
-			$("#durum3").html(data.mesaj).addClass('alertclass green');
-		}
-		if(data.yonlendir.durum == "1"){
-			window.location.href = data.yonlendir.adres;
-		}
-	//}, 1000);
-}
-ajaxe3.ajax();
-
-$("#cancelb3").click(function(event) {
-	ajaxe3.cancel(); /*this cancel ajax and return errorcallback*/ /* if you using localhost, this not working because localhost faster than light*/
-	event.preventDefault();
-});
-
-console.log("### Sample 3 ###");
-
 </script>
 
 </body>
