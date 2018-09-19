@@ -1,4 +1,4 @@
-var Kezbann = function () {
+var Kezban = function () {
 	//var hostname = window.location.hostname.split(".")
 	this.method = "get"
 	this.apiurl = "/"
@@ -8,52 +8,52 @@ var Kezbann = function () {
 	//this.success = function(data) {};
 	//this.beforeSend = function(data) {};
 };
-Kezbann.prototype.setApiurl = function(val) {
+Kezban.prototype.setApiurl = function(val) {
 	this.apiurl = val;
 	return this;
 };
-Kezbann.prototype.setMethod = function(val) {
+Kezban.prototype.setMethod = function(val) {
 	this.method = val;
 	return this;
 };
-Kezbann.prototype.setAction = function(val) {
+Kezban.prototype.setAction = function(val) {
 	this.action = val;
 	return this;
 };
-Kezbann.prototype.setData = function(val) {
+Kezban.prototype.setData = function(val) {
 	this.data = val;
 	return this;
 };
-Kezbann.prototype.setType = function(val) {
+Kezban.prototype.setType = function(val) {
 	this.type = val;
 	return this;
 };
-Kezbann.prototype.setbeforeSend = function(func) {
+Kezban.prototype.setbeforeSend = function(func) {
 	this.beforeSend = func;
 	return this;
 };
-Kezbann.prototype.setSuccess = function(func) {
+Kezban.prototype.setSuccess = function(func) {
 	this.success = func;
 	return this;
 };
-Kezbann.prototype.setError = function(func) {
+Kezban.prototype.setError = function(func) {
 	this.error = func;
 	return this;
 };
-Kezbann.prototype.beforeSend = function(data) {
+Kezban.prototype.beforeSend = function(data) {
 	if(this.debug)
 		console.log(data)
 };
-Kezbann.prototype.success = function(data, xhr) {
+Kezban.prototype.success = function(data, xhr) {
 	if(this.debug)
 		console.log(data)
 		console.log(xhr)
 };
-Kezbann.prototype.error = function(data) {
+Kezban.prototype.error = function(data) {
 	if(this.debug)
 		console.log(data)
 };
-Kezbann.prototype.yap = function() {
+Kezban.prototype.yap = function() {
 	var self = this;
 
 	function getXMLHttpRequest() {
@@ -114,4 +114,4 @@ Kezbann.prototype.yap = function() {
 	return this;
 }
 
-var kezban = Kezbann || {};
+//var kezban = Kezban || {};
