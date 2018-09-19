@@ -1,7 +1,7 @@
-var Kezbann = function () {
-	var hostname = window.location.hostname.split(".")
+var Kezbann = function (url) {
+	//var hostname = window.location.hostname.split(".")
 	this.method = "get"
-	this.apiurl = "/"
+	this.apiurl = url | "/"
 	this.action = null
 	this.data = null
 	this.debug = true;

@@ -13,7 +13,7 @@
 <h6>hi</h6>
 
 <script>
-var s = new kezban();
+var kezo = new kezban("https://jsonplaceholder.typicode.com")
 //console.log(s); /* all functions on the console */
 </script>
 
@@ -27,7 +27,7 @@ var s = new kezban();
 </form>
 <script>
 console.log("*** Sample 1 ***");
-new kezban().setAction("https://jsonplaceholder.typicode.com/todos/1").yap();
+kezo.setAction("/todos/1").yap();
 console.log("### Sample 1 ###");
 </script>
 
