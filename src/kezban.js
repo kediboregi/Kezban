@@ -1,7 +1,7 @@
 var Kezban = function () {
 	//var hostname = window.location.hostname.split(".")
 	this.method = "get"
-	this.apiurl = "/"
+	this.apiurl = ""
 	this.action = null
 	this.data = null
 	this.debug = true;
