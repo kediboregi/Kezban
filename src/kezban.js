@@ -104,12 +104,12 @@ Kezban.prototype.yap = function() {
 		}
 	}
 
-	if (self.type == "form") {
-		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
-		xhr.send(self.data);
-	} else {
+	if (self.type == "json") {
 		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 		xhr.send(JSON.stringify(self.data));
+	} else {
+		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+		xhr.send(self.data);
 	}
 	return this;
 }
